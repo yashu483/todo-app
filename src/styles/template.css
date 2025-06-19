@@ -1,25 +1,25 @@
 * {
     box-sizing: border-box;
     border-collapse: collapse;
-    border: 1px solid red;
 }
 
 @font-face {
     font-family: "roboto";
     src: url("./../resources/fonts/Roboto-Regular.woff") format("woff"),
-    url("./../resources/fonts/Roboto-Regular.woff2") format("woff2");
+        url("./../resources/fonts/Roboto-Regular.woff2") format("woff2");
 }
 
 @font-face {
     font-family: "inter";
     src: url("./../resources/fonts/Inter18pt-Regular.woff") format("woff"),
-    url("./../resources/fonts/Inter18pt-Regular.woff2") format("woff2");
+        url("./../resources/fonts/Inter18pt-Regular.woff2") format("woff2");
 }
+
 :root {
-    --heading : "inter" , "roboto" , system-ui;
-    --text : "roboto","inter" , system-ui;
+    --heading: "inter", "roboto", system-ui;
+    --text: "roboto", "inter", system-ui;
     font-family: var(--text);
-    
+
 }
 
 html,
@@ -83,12 +83,93 @@ header>div:last-child {
 
 /* header section ends */
 
+/* project section in template */
 #projects {
     grid-column: 1 / 2;
     grid-row: 2;
-
+    display: flex;
+    flex-direction: column;
 }
 
+#projects>div {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+    gap: 3rem;
+}
+
+#projects>div>div {
+    font-size: 2rem;
+    font-weight: 900;
+}
+
+#projects>div>button {
+    width: 80px;
+    height: 80px;
+    font-size: 4rem;
+    border-radius: 50px;
+    background-color: black;
+    color: white;
+    font-weight: 900;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#add-new-project:hover {
+    transform: scale(1.1) translateY(4px);
+}
+
+#add-new-project:active {
+    transform: scale(1.1) translateY(4px);
+    background-color: grey;
+}
+
+#projects {
+    border: 1px solid red;
+}
+
+#projects>ul {
+    display: grid;
+    grid-template-rows: max-content;
+    grid-auto-flow: row;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+}
+
+#projects>ul>li {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+    gap: 3rem;
+    align-items: center;
+    padding: 1rem;
+    background-color: rgb(236, 207, 153);
+    border-bottom: 1px solid orange;
+}
+
+#projects ul>li>button{
+    /* display: none; */
+}
+#projects ul>li>button:hover {
+    transform: scale(1.1) translateY(3px);
+}
+
+#projects ul>li>button>img {
+    width: 1.3rem;
+    height: 1.3rem;
+    background-color: none;
+    border: none;
+    border-radius: 10px;
+}
+
+
+/* tasks section in template reload */
 #tasks {
     grid-column: 2 / 3;
     grid-row: 2;
@@ -107,7 +188,7 @@ footer {
     font-weight: 700;
 }
 
-footer > a {
+footer>a {
     text-decoration: none;
     color: inherit;
 }
